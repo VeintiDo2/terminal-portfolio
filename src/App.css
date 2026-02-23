@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+    --animate-disappear: crt-disappear 0.3s ease-in forwards;
+    --animate-appear: crt-appear 0.3s ease-out forwards;
+    --animate-systemBoot: system-boot 0.5s ease-out forwards;
+    --color-terminalBG: #06110a;
+    --color-terminalGreen: #00ff66;
+    --color-terminalGreenDark: #0f3d26;
+}
+
+/* App.css */
+.crt::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px,
+            transparent 2px);
+}
+
+@keyframes crt-disappear {
+    0% {
+        display: flex;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleY(0);
+        display: none;
+    }
+}
+
+@keyframes crt-appear {
+    0% {
+        display: none;
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+        display: flex;
+    }
+}
+
+@keyframes system-boot {
+    0% {
+        display: flex;
+        transform: scaleY(0);
+    }
+
+    100% {
+        display: flex;
+        transform: scaleY(1);
+    }
+}

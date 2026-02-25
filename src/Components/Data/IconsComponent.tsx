@@ -1,4 +1,7 @@
-import { HomeIcon, UserIcon, CodeBracketSquareIcon, PhoneIcon, LanguageIcon, XMarkIcon, SpeakerWaveIcon } from "@heroicons/react/24/outline";
+import {
+    HomeIcon, UserIcon, CodeBracketSquareIcon, PhoneIcon, LanguageIcon,
+    XMarkIcon, SpeakerWaveIcon, ExclamationTriangleIcon
+} from "@heroicons/react/24/outline";
 
 export const Icons = {
     Home: <HomeIcon />,
@@ -8,4 +11,5 @@ export const Icons = {
     Language: <LanguageIcon />,
     Close: <XMarkIcon />,
     Audio: <SpeakerWaveIcon />,
+    warning: <ExclamationTriangleIcon />
 } as const

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useUISounds } from "./Components/Hook/UseUISounds";
 import LanguageModal from "./Components/LanguageModal";
 import TerminalButton from "./Components/Buttons";
@@ -17,6 +17,7 @@ const App = () => {
 
   const { playClick, playHover } = useUISounds();
 
+  const hasShownSobreMiModel = useRef<boolean>(false); //Para controlar las animaciones y que solo se ejecuten una vez por sección.
   const [bootMessages, setBootMessages] = useState<string[]>([]);
   const allMessages = ["Booting...", "Loading UI...", "Syncing Modules...", "> Ready_"];
 
@@ -64,7 +65,7 @@ const App = () => {
         {/* Contenedor principal */}
         <div className="flex items-center justify-center flex-1">
 
-          {activeSection === "sobreMi" && <SobreMi />}
+          {activeSection === "sobreMi" && <SobreMi hasShownRef={hasShownSobreMiModel} />}
           {activeSection === "proyectos" && <Proyectos />}
           {activeSection === "contacto" && <Contacto />}
         </div>

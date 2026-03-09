@@ -28,13 +28,12 @@ const App = () => {
       }, index * 300);
     });
     setTimeout(() => {
-      console.log("Sistema iniciado");
       setSystemBooted(true);
     }, 2000);
   }, []);
 
   return (
-    < main className="crt relative h-screen bg-terminalBG font-mono text-terminalGreen p-10" >
+    < main className="crt relative h-screen w-screen bg-terminalBG font-mono text-terminalGreen px-2 py-8 md:p-8" >
 
       {/* Mensajes de Boot */}
       <article className={`absolute ${systemBooted ? "hidden" : "flex"} flex-col gap-3.5`}>
@@ -43,9 +42,12 @@ const App = () => {
         ))}
       </article>
 
-      <section className={` ${systemBooted ? "animate-systemBoot" : "hidden"} relative border shadow-xs shadow-terminalGreen h-full`}>
+      <section className={` ${systemBooted ? "animate-systemBoot" : "hidden"} relative border h-full`}>
 
-        <TerminalButton label="Clic para activar el sonido del sistema" icon="Audio" variant="console" touchToHiden={true} absolutePosition={true} size="small" onClick={() => setSoundActivated(true)} soundActivated={soundActivated} sound={{ playClick: () => playClick(), playHover: () => playHover() }} />
+        <TerminalButton label="Clic para activar el sonido del sistema" icon="Audio"
+          variant="console" touchToHiden={true} absolutePosition={true} size="small"
+          onClick={() => setSoundActivated(true)} soundActivated={soundActivated}
+          sound={{ playClick: () => playClick(), playHover: () => playHover() }} />
 
         {/* Barra lateral */}
         <aside className="border-r flex flex-col">

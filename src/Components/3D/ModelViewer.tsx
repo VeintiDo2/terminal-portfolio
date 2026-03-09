@@ -38,8 +38,8 @@ const ModelViewer = ({ url, canAutoRotate, canZoom, canRotate, canPan, isWirefra
     if (!url) return <span className="text-red-400">Modelo no disponible</span>;
 
     return (
-        <div className={`${canShowModel ? "animate-fade-in" : "animate-none"} opacity-0 relative size-full overflow-hidden`}>
-            
+        <div className={`${canShowModel ? "animate-fade-in" : ""} opacity-0 relative size-full overflow-hidden`}>
+
             <Canvas camera={{ position: [10, 1, 1], fov: 2 }}>
                 <Suspense fallback={null}>
 

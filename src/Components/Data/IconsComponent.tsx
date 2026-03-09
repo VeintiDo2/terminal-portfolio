@@ -3,6 +3,8 @@ import {
     XMarkIcon, SpeakerWaveIcon, ExclamationTriangleIcon
 } from "@heroicons/react/24/outline";
 
+import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
+
 export const Icons = {
     Home: <HomeIcon />,
     User: <UserIcon />,
@@ -11,5 +13,8 @@ export const Icons = {
     Language: <LanguageIcon />,
     Close: <XMarkIcon />,
     Audio: <SpeakerWaveIcon />,
-    warning: <ExclamationTriangleIcon />
+    warning: <ExclamationTriangleIcon />,
+    Linkedin: <AiOutlineLinkedin />,
+    Email: <AiOutlineMail />,
+    GitHub: <AiOutlineGithub />,
 } as const

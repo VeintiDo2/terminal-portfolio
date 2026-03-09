@@ -38,7 +38,7 @@ const TerminalButton = ({
     const [hide, setHide] = useState<boolean>(false);
     const styles = buttonSizes[size];
     const centeredClass = "items-center justify-center flex";
-    const absoluteClass = "absolute -top-8 "; // Clase para posicionar el botón de forma absoluta.
+    const absoluteClass = "absolute -top-6.5 "; // Clase para posicionar el botón de forma absoluta.
 
     const handleClick = () => {
         onClick && onClick();
@@ -59,8 +59,7 @@ const TerminalButton = ({
                 }}
                 onMouseEnter={handleHover}>
 
-                <span>{">"}</span>
-                {label && <span className={`${styles.text} ${centeredClass}`}>{label}</span>}
+                {label && <span className={`${styles.text} ${centeredClass}`}>{"> "}{label}</span>}
                 {icon && <div className={`${styles.icon} ${centeredClass}`}>{Icons[icon]}</div>}
 
             </button>
